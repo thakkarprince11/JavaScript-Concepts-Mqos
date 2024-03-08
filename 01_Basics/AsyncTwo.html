@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <title>Async Two</title>
+    
+</head>
+
+<body style="background-color: #212121; color: white;">
+    <h3 id="title">Async Two</h3>
+    
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <!-- Script JS -->
+    <script>
+
+        function sayDate(str){
+            console.log(str, Date.now())
+        }
+
+        let intervalID;
+
+        document.querySelector('#start').addEventListener('click', function(){
+            intervalID = setInterval(sayDate, 1000, 'Interval')
+            console.log('Started')
+        })
+
+        document.querySelector('#stop').addEventListener('click', function(){
+            clearInterval(intervalID)
+            console.log('Stopped')
+        })
+
+        
+    </script>
+</body>
+
+
+</html>

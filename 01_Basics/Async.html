@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <title>Async</title>
+    
+</head>
+
+<body style="background-color: #212121; color: white;">
+    <h3 id="title">Async</h3>
+    <button id="stop">Stop</button>
+
+    <!-- Script JS -->
+    <script>
+
+        function sayHello(){
+            console.log("Hello World")
+        }
+
+        function changeTitle(){
+            const title = document.querySelector('h3')
+            console.log(title)
+
+            title.innerHTML = "Async New Title"
+        }
+
+        setTimeout(sayHello, 2000)
+
+        const changeMe = setTimeout(changeTitle, 3000)
+
+        // Clear TimeOut
+
+        document.querySelector('#stop').addEventListener('click', function(){
+            clearTimeout(changeMe)
+            console.log("Stopped")
+        })
+
+
+    </script>
+</body>
+
+
+</html>
