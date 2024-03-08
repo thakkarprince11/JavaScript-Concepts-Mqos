@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <title>Keypress Event</title>
+    
+</head>
+
+<body style="background-color: #212121; color: white;">
+    <h3 id="title">Keypress Event</h3>
+    
+    <div class="project">
+        <div id="insert">
+            <div id="key">Press key and Watch Magic</div>
+        </div>
+    </div>
+
+    <!-- Script JS -->
+    <script>
+
+        let insert = document.getElementById('insert')
+        console.log(insert)
+        
+        window.addEventListener('keydown', function(event){
+            insert.innerHTML = `
+                <div> 
+                    <table>
+                        <tr>
+                            <th>Key</th>
+                            <th>KeyCode</th>
+                            <th>Code</th>
+                            </tr>
+                            <tr>
+                            <td>${event.key}</td>
+                            <td>${event.keyCode}</td>
+                            <td>${event.code}</td>
+                            </tr>
+                        </table>    
+                </div>
+            `
+        })
+        
+    </script>
+</body>
+
+
+</html>
