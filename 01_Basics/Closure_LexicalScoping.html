@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+    <title>Closure and Lexical Scoping</title>
+    
+</head>
+
+<body style="background-color: #212121; color: white;">
+    <h3 id="title">Closure and Lexical Scoping</h3>
+
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+
+    <!-- Script JS -->
+    <script>
+
+        // Lexical Scoping - Inner Function can access Outer Function Properties - 
+        // function init() {
+        //     let name = "Mozilla"; 
+        //     //console.log(secret)
+        //         function displayName() {
+        //             console.log(name);
+        //             let secret = 'my0510'
+        //         }
+        //         displayName();
+
+        //         function display(){
+        //             console.log(name)
+        //             //console.log(secret)
+        //         }
+        //         display()
+        // }
+        // init();
+
+
+        // Closure - 
+        function makeFunc() {
+            const name = "Vanilla";
+                function displayName() {
+                    console.log(name);
+                }
+            return displayName;
+        }
+        const myFunc = makeFunc();
+        myFunc()
+
+    </script>
+
+    <script>
+        // Closure - 
+        // document.getElementById('orange').onclick = function(){
+        //     document.body.style.backgroundColor = 'orange'
+        // }
+        // document.getElementById('green').onclick = function(){
+        //     document.body.style.backgroundColor = 'green'
+        // }
+
+        function clickHandler(color){
+            //document.body.style.backgroundColor = `${color}`
+            return function(){
+                document.body.style.backgroundColor = `${color}`
+            }
+        }
+
+        document.getElementById('orange').onclick = clickHandler('orange')
+        document.getElementById('green').onclick = clickHandler('green')
+
+
+    </script>
+</body>
+
+
+</html>
+
+
